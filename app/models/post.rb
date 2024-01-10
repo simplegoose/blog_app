@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: :User, foreign_key: :author_id
-  has_many :comments, foreign_key: :post_id
-  has_many :likes, foreign_key: :user_id
+  belongs_to :author, class_name: :User
+  has_many :comments
+  has_many :likes
   after_save :update_post_count
 
   def recent_comments
