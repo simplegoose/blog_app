@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class PostsController < ApplicationController
   # Get users/:user_id/posts
   def index
     @posts = Post.where(author_id: params[:user_id])
