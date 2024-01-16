@@ -1,6 +1,7 @@
 <div class="users">
   <h1>Users</h1>
   <% @users.each do |user| %>
+    <%= link_to "/users/#{user.id}" do %>
     <div class="user_info_wrapper">
       <%= image_tag user.photo, :class => 'user_avatar' %>
       <div class="user_details">
@@ -8,5 +9,6 @@
         <span>Number of posts: <%= user.post_counter %></span>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
