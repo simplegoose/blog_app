@@ -1,1 +1,33 @@
-<h1>Here is a list of all posts by user 1</h1>
+<article class="main_article" style="width: 90%; margin: auto">
+  <div style="display: flex; align-items: center; justify-content: space-between;">
+    <%= image_tag @user.photo, :class => "user_avatar" %>
+    <div class="user_details">
+      <p><%= @user.name %></p>
+      <span>Number of posts: <%= @user.post_counter %></span>
+    </div>
+  </div>
+
+  <% @user.recent_posts.each_with_index do |post, index| %>
+    <div>
+      <div class="post">
+        <h4>Post #<%= index + 1 %></h4>
+        <div>
+          <p class="post_title"><%= post.title %></p>
+        </div>
+        <div class="post_footer">
+          <span>Comments: <%= post.comments_counter %></span>
+          <span>Likes: <%= post.likes_counter %></span>
+        </div>
+      </div>
+      <div class="post_comments">
+        <div class="comments">
+          <% post.recent_comments.each do |comment| %>
+            <div class="comment">
+              <span>User <%= comment.user_id %></span> : <span><%= comment.text %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</article>
