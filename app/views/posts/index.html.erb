@@ -1,7 +1,7 @@
-<article class="main_article" style="width: 90%; margin: auto">
+<article class="main-article" style="width: 90%; margin: auto">
   <div style="display: flex; align-items: center; justify-content: space-between;">
-    <%= image_tag @user.photo, :class => "user_avatar" %>
-    <div class="user_details">
+    <%= image_tag @user.photo, :class => "user-avatar" %>
+    <div class="user-details">
       <p><%= @user.name %></p>
       <span>Number of posts: <%= @user.post_counter %></span>
     </div>
@@ -12,14 +12,14 @@
       <div class="post">
         <h4>Post #<%= index + 1 %></h4>
         <div>
-          <p class="post_title"><%= post.title %></p>
+          <p class="post-title"><%= post.title %></p>
         </div>
-        <div class="post_footer">
+        <div class="post-footer">
           <span>Comments: <%= post.comments_counter %></span>
           <span>Likes: <%= post.likes_counter %></span>
         </div>
       </div>
-      <div class="post_comments">
+      <div class="post-comments">
         <div class="comments">
           <% post.recent_comments.each do |comment| %>
             <div class="comment">

@@ -1,7 +1,7 @@
-<article class="main_article">
-  <div class="user_info_wrapper">
-    <%= image_tag @user.photo, :class => "user_avatar" %>
-    <div class="user_details">
+<article class="main-article">
+  <div class="user-info-wrapper">
+    <%= image_tag @user.photo, :class => "user-avatar" %>
+    <div class="user-details">
       <p><%= @user.name %></p>
       <span>Number of posts: <%= @user.post_counter %></span>
     </div>
@@ -16,14 +16,14 @@
     <div class="post">
       <h4>Post #<%= index + 1 %></h4>
       <div>
-        <p class="post_title"><%= post.title %></p>
+        <p class="post-title"><%= post.title %></p>
       </div>
-      <div class="post_footer">
+      <div class="post-footer">
         <span>Comments: <%= post.comments_counter %></span>
         <span>Likes: <%= post.likes_counter %></span>
       </div>
     </div>
   <% end %>
 
-  <%= link_to "See all posts", "/users/#{@user.id}/posts", :class => 'see_all_link' %>
+  <%= link_to "See all posts", "/users/#{@user.id}/posts", :class => 'see-all-link' %>
 </article>

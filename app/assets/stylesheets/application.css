@@ -18,42 +18,42 @@
 
  * {
    box-sizing: border-box;
-   font-family: 'Montserrat', sans-serif;
+   font-family: Montserrat, sans-serif;
  }
  
  .users,
- .main_article,
- .user_post {
+ .main-article,
+ .user-post {
    width: 90%;
    margin: auto;
  }
  
- .user_info_wrapper {
+ .user-info-wrapper {
    display: flex;
    align-items: center;
    justify-content: space-between;
    margin-bottom: 2rem;
  }
  
- .user_avatar {
+ .user-avatar {
    border: 2px solid black;
    max-height: 140px;
    max-width: 140px;
    height: 100%;
  }
  
- .user_details {
+ .user-details {
    min-width: 80%;
    border: 2px solid black;
    padding: 0 2rem;
    padding-bottom: 1rem;
  }
  
- .user_details p {
+ .user-details p {
    font-size: 2rem;
  }
  
- .user_details span {
+ .user-details span {
    text-align: end;
  }
  
@@ -76,30 +76,30 @@
    padding-bottom: 2rem;
  }
  
- .post_title {
+ .post-title {
    word-break: break-word;
  }
  
- .post_footer {
+ .post-footer {
    font-weight: bold;
    display: flex;
    justify-content: end;
    gap: 0.5rem;
  }
  
- .post_comments {
+ .post-comments {
    width: 100%;
    border: 2px solid black;
    padding: 1rem 2rem;
    margin-top: 2rem;
  }
  
- .see_all_link,
- .create_post {
+ .see-all-link,
+ .create-post {
    display: block;
    text-decoration: none;
    margin: 2rem auto 0;
-   border: 2px solid rgb(99, 2, 99);
+   border: 2px solid rgb(99 2 99);
    padding: 0.5rem 1rem;
    max-width: 150px;
    text-align: center;
@@ -111,55 +111,55 @@
    margin-bottom: 1rem;
  }
  
- .post_wrapper {
+ .post-wrapper {
    border: 2px solid black;
    padding: 0 1rem;
  }
  
- .post_header {
+ .post-header {
    display: flex;
    align-items: center;
    justify-content: space-between;
    margin-bottom: 2rem;
  }
  
- .post_content {
+ .post-content {
    word-break: break-word;
  }
  
- .comments_wrapper {
+ .comments-wrapper {
    border: 2px solid black;
-   padding: 1rem 1rem;
+   padding: 1rem;
    margin-top: 1rem;
  }
  
- .post_form h1 {
+ .post-form h1 {
    text-align: center;
    color: plum;
  }
  
- .post_form form {
+ .post-form form {
    max-width: 400px;
    margin: 3rem auto;
  }
  
- .post_form .form_group {
+ .post-form .form-group {
    margin: 1rem auto;
    width: 100%;
  }
  
- .post_form .form_group input,
- .post_form .form_group textarea {
+ .post-form .form-group input,
+ .post-form .form-group textarea {
    width: 100%;
    padding: 0.5rem 0.75rem;
    margin-top: 0.5rem;
  }
  
- .post_form .form_group label {
+ .post-form .form-group label {
    font-weight: 500;
  }
  
- .post_form input[type="submit"] {
+ .post-form input[type="submit"] {
    padding: 0.5rem 1rem;
    border-radius: 0.5rem;
    font-weight: 500;
@@ -176,7 +176,7 @@
    width: 100%;
  }
  
- .alert_inner {
+ .alert-inner {
    max-width: 250px;
    border-radius: 0.5rem;
    color: white;
@@ -185,15 +185,15 @@
    opacity: 0.8;
  }
  
- .alert_success {
-   background-color: rgb(40, 174, 40);
+ .alert-success {
+   background-color: rgb(40 174 40);
  }
  
  .alert-danger {
-   background-color: rgb(234, 57, 57);
+   background-color: rgb(234 57 57);
  }
  
- .post_actions {
+ .post-actions {
    display: flex;
    align-items: center;
    justify-content: space-between;
@@ -204,7 +204,7 @@
    gap: 2rem;
  }
  
- .post_actions form input[type="submit"] {
+ .post-actions form input[type="submit"] {
    padding: 0.5rem 1rem;
    border-radius: 0.5rem;
    font-weight: 500;
@@ -212,7 +212,7 @@
    border: none;
  }
  
- .post_actions .comment_link {
+ .post-actions .comment-link {
    padding: 0.5rem 1rem;
    border-radius: 0.5rem;
    font-weight: 500;

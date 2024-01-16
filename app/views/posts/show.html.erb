@@ -1,6 +1,6 @@
-<article id="user_post">
-  <div class="post_wrapper">
-    <div class="post_header">
+<article id="user-post">
+  <div class="post-wrapper">
+    <div class="post-header">
       <div class="header">
         <h1><%= @post.title %> by <%= @user.name %></h1>
       </div>
@@ -9,9 +9,9 @@
         <span>Likes: <%= @post.likes_counter %></span>
       </div>
     </div>
-    <p style="post_content"><%= @post.text %></p>
+    <p style="post-content"><%= @post.text %></p>
   </div>
-  <div class="comments_wrapper">
+  <div class="comments-wrapper">
     <% @post.recent_comments.each do |comment| %>
       <div class="comment">
         <span>User <%= comment.user_id %></span> : <span><%= comment.text %></span>
