@@ -3,7 +3,9 @@
 
   <% @posts.each_with_index do |post, index| %>
     <div>
-      <%= render partial: '/shared/post', locals: { post: post } %>
+      <%= link_to "/users/#{@user.id}/posts/#{post.id}" do %>
+        <%= render partial: '/shared/post', locals: { post: post } %>
+      <% end %>
       <div class="post-comments">
         <div class="comments">
           <% post.recent_comments.each do |comment| %>
