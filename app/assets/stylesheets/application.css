@@ -49,11 +49,11 @@
   padding-bottom: 1rem;
 }
 
-.user-details p {
+.user-details .username {
   font-size: 2rem;
 }
 
-.user-details span {
+.user-details .post-number {
   text-align: end;
 }
 
