@@ -1,11 +1,5 @@
 <article class="main-article">
-  <div class="user-info-wrapper">
-    <%= image_tag @user.photo, :class => "user-avatar" %>
-    <div class="user-details">
-      <p><%= @user.name %></p>
-      <span>Number of posts: <%= @user.post_counter %></span>
-    </div>
-  </div>
+  <%= render partial: '/shared/user', locals: { user: @user } %>
   
   <div class="bio">
     <h3>Bio</h3>

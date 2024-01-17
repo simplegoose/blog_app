@@ -1,13 +1,7 @@
 <article class="main-article" style="width: 90%; margin: auto">
-  <div style="display: flex; align-items: center; justify-content: space-between;">
-    <%= image_tag @user.photo, :class => "user-avatar" %>
-    <div class="user-details">
-      <p><%= @user.name %></p>
-      <span>Number of posts: <%= @user.post_counter %></span>
-    </div>
-  </div>
+  <%= render partial: '/shared/user', locals: { user: @user } %>
 
-  <% @user.recent_posts.each_with_index do |post, index| %>
+  <% @posts.each_with_index do |post, index| %>
     <div>
       <div class="post">
         <h4>Post #<%= index + 1 %></h4>
@@ -22,12 +16,12 @@
       <div class="post-comments">
         <div class="comments">
           <% post.recent_comments.each do |comment| %>
-            <div class="comment">
-              <span>User <%= comment.user_id %></span> : <span><%= comment.text %></span>
-            </div>
+            <%= render partial: '/shared/comment', locals: { comment: comment } %>
           <% end %>
         </div>
       </div>
     </div>
   <% end %>
+
+  <a class='see-all-link'>Pagination</a>
 </article>
