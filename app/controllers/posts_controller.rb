@@ -9,6 +9,6 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = Post.where(author_id: params[:user_id], id: params[:id])[0]
-    @comments = Comment.where(user: params[:user_id])
+    @comments = Comment.where(post_id: params[:id])
   end
 end
