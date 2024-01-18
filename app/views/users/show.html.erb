@@ -1,1 +1,14 @@
-<h1>Here is a list of all posts from user 1 and bio</h1>
+<article class="main-article">
+  <%= render partial: '/shared/user', locals: { user: @user } %>
+  
+  <div class="bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <% @user.recent_posts.each_with_index do |post, index| %>
+    <%= render partial: '/shared/post', locals: { post: post } %>
+  <% end %>
+
+  <%= link_to "See all posts", "/users/#{@user.id}/posts", :class => 'see-all-link' %>
+</article>

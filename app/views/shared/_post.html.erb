@@ -1,0 +1,12 @@
+<div class="post-wrapper">
+  <div class="post-header">
+    <div class="header">
+      <h1><%= post&.title %> by <%= @user.name %></h1>
+    </div>
+    <div>
+      <span>Comments: <%= post&.comments_counter %></spa&>
+      <span>Likes: <%= post&.likes_counter %></span>
+    </div>
+  </div>
+  <p style="post-content"><%= post&.text %></&>
+</div>
