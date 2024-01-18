@@ -3,9 +3,13 @@
     <div class="header">
       <h1><%= post&.title %> by <%= @user.name %></h1>
     </div>
-    <div>
-      <span>Comments: <%= post&.comments_counter %></spa&>
-      <span>Likes: <%= post&.likes_counter %></span>
+    <div class="actions">
+      <%= form_with url: "/users/#{@user.id}/posts/#{post&.id}/likes/", method: :post, remote: true do |form| %>
+        <%= form.hidden_field :author_id, value: @user.id %>
+        <%= form.hidden_field :post_id, value: post&.id %>
+        <%= form.submit "Like (#{post&.likes_counter})" %>
+      <% end %>
+      <%= link_to "Comment (#{post&.comments_counter})", "/users/#{@user.id}/posts/#{post&.id}/comments/new", :class => 'comment-link' %>
     </div>
   </div>
   <p style="post-content"><%= post&.text %></&>
