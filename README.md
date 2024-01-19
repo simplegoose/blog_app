@@ -92,7 +92,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/simplegoose/blog-app.git
+  git clone https://github.com/simplegoose/blog_app.git
 ```
 
 ### Install
@@ -100,7 +100,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd blog-app
+  cd blog_app
   gem install
 ```
 -
@@ -151,7 +151,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](../../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,0 +1,31 @@
+<main class="post-form">
+  <h1>New Comment</h1>
+  <% flash.each do |type, msg| %>
+    <div class="alert">
+      <% if type == 'error' then %>
+        <div class="alert-inner alert-danger">
+          <%= msg %>
+        </div>
+      <% end %>
+      <% if type == 'success' then %>
+        <div class="alert-inner alert-success">
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= form_with model: comment, url: user_post_comments_path, method: :post, local: true do |form| %>
+    <div class="form-group">
+      <%= form.label :text, "Text" %><br/>
+      <%= form.text_area :text, :maxlength => 250, :placeholder => "Enter comment content" %>
+    </div>
+    <%
+=begin%>
+ <%= form.hidden_field :post_id, value: @post.id %> 
+<%
+=end%>
+    <div>
+      <%= form.submit "Post", disable_with: 'Submiting...' %>
+    </div>
+  <% end %>
+</main>
