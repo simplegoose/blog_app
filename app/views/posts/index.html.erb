@@ -8,7 +8,7 @@
       <% end %>
       <div class="post-comments">
         <div class="comments">
-          <% post.recent_comments.each do |comment| %>
+          <% post.comments.each do |comment| %>
             <%= render partial: '/shared/comment', locals: { comment: comment } %>
           <% end %>
         </div>
