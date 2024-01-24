@@ -34,7 +34,6 @@ RSpec.describe 'Post/Index', type: :system do
     comment.save
   end
 
-
   describe 'Index page' do
     it 'I can see the user\'s profile pic.' do
       visit user_posts_path(user)

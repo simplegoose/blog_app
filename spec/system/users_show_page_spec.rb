@@ -24,7 +24,6 @@ RSpec.describe 'Users/Show', type: :system do
     post3.save
   end
 
-
   describe 'Show page' do
     it 'I can see the user\'s profile pic.' do
       visit user_path(user)

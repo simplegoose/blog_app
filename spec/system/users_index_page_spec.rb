@@ -19,7 +19,6 @@ RSpec.describe 'Users/Index', type: :system do
     user3.save
   end
 
-
   describe 'Index page' do
     it 'I can see the username of all other users.' do
       visit users_path
