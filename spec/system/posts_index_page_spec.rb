@@ -5,6 +5,10 @@ RSpec.describe 'Post/Index', type: :system do
     User.create(name: 'Harry', photo: 'https://photos.com/harrystyles', bio: 'harry Styles here!')
   end
 
+  let(:user2) do
+    User.create(name: 'Matt', photo: 'https://photos.com/matt', bio: 'Matt here!')
+  end
+
   let(:post) do
     Post.create(author: user, text: 'text', title: 'First!')
   end
@@ -22,16 +26,42 @@ RSpec.describe 'Post/Index', type: :system do
   end
 
   let(:comment) do
-    Comment.create(user:, post:, text: 'text')
+    Comment.create(user:, post:, text: 'text1')
+  end
+
+  let(:comment2) do
+    Comment.create(user:, post:, text: 'text2')
+  end
+
+  let(:comment3) do
+    Comment.create(user:, post:, text: 'text3')
+  end
+
+  let(:comment4) do
+    Comment.create(user:, post:, text: 'text4')
+  end
+
+  let(:comment5) do
+    Comment.create(user:, post:, text: 'text5')
+  end
+
+  let(:comment6) do
+    Comment.create(user:, post:, text: 'text6')
   end
 
   before :each do
     user.save
+    user2.save
     post.save
     post2.save
     post3.save
     like.save
     comment.save
+    comment2.save
+    comment3.save
+    comment4.save
+    comment5.save
+    comment6.save
   end
 
   describe 'Index page' do
@@ -62,9 +92,14 @@ RSpec.describe 'Post/Index', type: :system do
       expect(page).to have_content(post3.text)
     end
 
-    it 'I can see a post comment.' do
+    it 'I can see a five most recent comments.' do
       visit user_posts_path(user)
-      expect(page).to have_content(comment.text)
+
+      expect(page).to have_content(comment2.text)
+      expect(page).to have_content(comment3.text)
+      expect(page).to have_content(comment4.text)
+      expect(page).to have_content(comment5.text)
+      expect(page).to have_content(comment6.text)
     end
 
     it 'I can see how many comments a post has.' do

@@ -14,15 +14,15 @@ RSpec.describe 'Post/Show', type: :system do
   end
 
   let(:like) do
-    Like.create(user: user, post: post)
+    Like.create(user:, post:)
   end
 
   let(:comment) do
-    Comment.create(user: user, post: post, text: 'text')
+    Comment.create(user:, post:, text: 'text')
   end
 
   let(:comment2) do
-    Comment.create(user: user2, post: post, text: 'text')
+    Comment.create(user: user2, post:, text: 'text')
   end
 
   before :each do
@@ -33,9 +33,8 @@ RSpec.describe 'Post/Show', type: :system do
     comment.save
     comment2.save
   end
-  
-  describe 'Show page' do
 
+  describe 'Show page' do
     it 'I can see a post title.' do
       visit user_post_path(user, post)
       expect(page).to have_content(post.title)
@@ -72,6 +71,5 @@ RSpec.describe 'Post/Show', type: :system do
       expect(page).to have_content(comment.text)
       expect(page).to have_content(comment2.text)
     end
-
   end
 end

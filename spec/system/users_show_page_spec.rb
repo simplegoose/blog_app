@@ -17,11 +17,16 @@ RSpec.describe 'Users/Show', type: :system do
     Post.create(author: user, text: 'text', title: 'Third!')
   end
 
+  let(:post4) do
+    Post.create(author: user, text: 'text', title: 'Fourth!')
+  end
+
   before :each do
     user.save
     post.save
     post2.save
     post3.save
+    post4.save
   end
 
   describe 'Show page' do
@@ -47,17 +52,23 @@ RSpec.describe 'Users/Show', type: :system do
 
     it 'I can see the user\'s first three posts.' do
       visit user_path(user)
-      expect(page).to have_content(post.title)
+      expect(page).to have_content(post4.title)
       expect(page).to have_content(post2.title)
       expect(page).to have_content(post3.title)
     end
 
-    it 'I can visit user post show page.' do
+    it 'I can see a button that lets me view all user\'s posts.' do
       visit user_path(user)
 
-      click_on post.title.to_s
+      expect(page).to have_content('See all posts')
+    end
 
-      expect(page).to have_content(post.title)
+    it 'I can visit user post index page.' do
+      visit user_path(user)
+
+      click_on post4.title.to_s
+
+      expect(page).to have_content(post4.title)
     end
   end
 end
