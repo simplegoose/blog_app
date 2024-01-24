@@ -18,10 +18,9 @@ RSpec.describe 'Users/Index', type: :system do
     user2.save
     user3.save
   end
-  
+
 
   describe 'Index page' do
-
     it 'I can see the username of all other users.' do
       visit users_path
       expect(page).to have_content(user.name)
@@ -46,10 +45,9 @@ RSpec.describe 'Users/Index', type: :system do
     it 'I can visit user show page.' do
       visit users_path
 
-      click_on "#{user.name}"
+      click_on user.name.to_s
 
       expect(page).to have_content(user.bio)
     end
-
   end
 end

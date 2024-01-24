@@ -23,10 +23,9 @@ RSpec.describe 'Users/Show', type: :system do
     post2.save
     post3.save
   end
-  
+
 
   describe 'Show page' do
-
     it 'I can see the user\'s profile pic.' do
       visit user_path(user)
       expect(page).to have_css("img[src*='#{user.photo}']")
@@ -57,10 +56,9 @@ RSpec.describe 'Users/Show', type: :system do
     it 'I can visit user post show page.' do
       visit user_path(user)
 
-      click_on "#{post.title}"
+      click_on post.title.to_s
 
       expect(page).to have_content(post.title)
     end
-
   end
 end

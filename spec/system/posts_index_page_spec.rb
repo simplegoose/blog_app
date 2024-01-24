@@ -18,11 +18,11 @@ RSpec.describe 'Post/Index', type: :system do
   end
 
   let(:like) do
-    Like.create(user: user, post: post)
+    Like.create(user:, post:)
   end
 
   let(:comment) do
-    Comment.create(user: user, post: post, text: 'text')
+    Comment.create(user:, post:, text: 'text')
   end
 
   before :each do
@@ -33,10 +33,9 @@ RSpec.describe 'Post/Index', type: :system do
     like.save
     comment.save
   end
-  
+
 
   describe 'Index page' do
-
     it 'I can see the user\'s profile pic.' do
       visit user_posts_path(user)
       expect(page).to have_css("img[src*='#{user.photo}']")
@@ -87,10 +86,9 @@ RSpec.describe 'Post/Index', type: :system do
     it 'I can visit post show page.' do
       visit user_posts_path(user)
 
-      click_on "#{post.title}"
+      click_on post.title.to_s
 
       expect(page).to have_content(post.title)
     end
-
   end
 end
