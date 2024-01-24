@@ -5,6 +5,10 @@ RSpec.describe 'Users', type: :request do
     User.create(name: 'Harry', photo: 'https://photos.com/harrystyles', bio: 'harry Styles here!')
   end
 
+  before :each do
+    user.save
+  end
+
   describe 'Get /' do
     it 'Sends a success response' do
       get '/'
@@ -21,7 +25,7 @@ RSpec.describe 'Users', type: :request do
     it 'Renders the correct placeholder text in the index page' do
       get '/'
 
-      expect(response.body).to include('Here is a list')
+      expect(response.body).to include(user.name)
     end
   end
 
@@ -41,7 +45,7 @@ RSpec.describe 'Users', type: :request do
     it 'Renders the correct placeholder text in the show page' do
       get "/users/#{user.id}"
 
-      expect(response.body).to include('Here is a list')
+      expect(response.body).to include(user.name)
     end
   end
 end
