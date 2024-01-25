@@ -1,0 +1,66 @@
+form {
+  max-width: 350px;
+  margin: auto;
+  align-items: center;
+}
+
+form .field {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+form .field label {
+  font-weight: 500;
+  color: rgb(99, 99, 99);
+}
+
+form .field input {
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+  border: none;
+  outline: 1px solid plum;
+  border-radius: 4px;
+}
+
+form .actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+form .actions input[type='submit'] {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  background-color: plum;
+  border: none;
+}
+
+form .remember {
+  margin-top: 1rem;
+}
+
+.auth .links {
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: start;
+}
+
+.auth .links.row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.auth-links {
+  max-width: 350px;
+  color: plum;
+  font-size: 0.8rem;
+}

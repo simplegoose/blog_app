@@ -244,3 +244,9 @@
 .text-black {
   color: black;
 }
+
+.auth-title {
+  text-align: center;
+  color: plum;
+  margin: 3rem auto 0;
+}
