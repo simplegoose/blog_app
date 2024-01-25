@@ -7,7 +7,9 @@
   </div>
 
   <% @user.recent_posts.each_with_index do |post, index| %>
-    <%= render partial: '/shared/post', locals: { post: post, object: @user } %>
+    <%= link_to "/users/#{@user.id}/posts/#{post.id}" do %>
+      <%= render partial: '/shared/post', locals: { post: post } %>
+    <% end %>
   <% end %>
 
   <%= link_to "See all posts", "/users/#{@user.id}/posts", :class => 'see-all-link' %>

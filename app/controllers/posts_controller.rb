@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # Get users/:user_id/posts
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.where(author_id: params[:user_id])
+    @posts = Post.includes(:comments).where(author_id: params[:user_id])
   end
 
   # Get users/:user_id/posts/:id

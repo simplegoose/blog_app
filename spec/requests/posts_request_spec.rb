@@ -9,6 +9,11 @@ RSpec.describe 'Posts', type: :request do
     Post.create(author: user, text: 'Hello world!', title: 'First post!')
   end
 
+  before :each do
+    user.save
+    post.save
+  end
+
   describe 'Get /users/:id/post' do
     it 'Sends a success response' do
       get "/users/#{user.id}/posts"
@@ -25,7 +30,7 @@ RSpec.describe 'Posts', type: :request do
     it 'Renders the correct placeholder text in the index page' do
       get "/users/#{user.id}/posts"
 
-      expect(response.body).to include('Here is a list')
+      expect(response.body).to include(user.name)
     end
   end
 
@@ -45,7 +50,7 @@ RSpec.describe 'Posts', type: :request do
     it 'Renders the correct placeholder text in the show page' do
       get "/users/#{user.id}/posts/#{post.id}"
 
-      expect(response.body).to include('Here are the details of post')
+      expect(response.body).to include(post.text)
     end
   end
 end
