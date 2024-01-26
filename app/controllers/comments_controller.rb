@@ -17,12 +17,24 @@ class CommentsController < ApplicationController
 
     if comment.save
       flash[:success] = 'Success: Your comment has been saved'
-      redirect_to users_path
+      redirect_to user_posts_path(user, post)
     else
       Comment.create
       flash[:error] = 'Error: Comment could not be saved'
       render :new, locals: { comment: }
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+
+    @comment.destroy
+    
+    @post.comments_counter -= 1;
+    @post.save
+
+    redirect_to "/users/#{params[:user_id]}/posts"
   end
 
   private

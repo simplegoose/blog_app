@@ -36,6 +36,22 @@ class PostsController < ApplicationController
     end
   end
 
+  # Get users/:user_id/posts/:id
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+
+    @post.comments.destroy_all
+    @post.likes.destroy_all
+
+    @post.destroy
+    
+    @user.post_counter -= 1;
+    @user.save
+
+    redirect_to "/users/#{params[:user_id]}"
+  end
+
   private
 
   def post_params
