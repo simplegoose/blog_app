@@ -8,7 +8,7 @@
         <%= form_with url: "/users/#{@user.id}/posts/#{post&.id}/likes/", :html => { :style => "display: inline;"}, method: :post, remote: true do |form| %>
           <%= form.hidden_field :author_id, value: @user.id %>
           <%= form.hidden_field :post_id, value: post&.id %>
-          <%= form.submit "Like" %>
+          <%= form.submit "Like", :class => 'like-btn' %>
         <% end %>
         <span><%= post&.likes_counter %> Likes</span>
       </div>
@@ -16,4 +16,9 @@
     </div>
   </div>
   <p style="post-content"><%= post&.text %></&>
+  <div class='admin-actions'>
+    <% if can? :destroy , post %>
+      <%= button_to 'Delete', user_post_path(@user, post), method: :delete %>
+    <% end %>
+  </div>
 </div>
