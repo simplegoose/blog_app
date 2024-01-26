@@ -30,8 +30,8 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     @comment.destroy
-    
-    @post.comments_counter -= 1;
+
+    @post.comments_counter -= 1
     @post.save
 
     redirect_to "/users/#{params[:user_id]}/posts"
