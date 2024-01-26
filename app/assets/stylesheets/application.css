@@ -160,12 +160,49 @@
   font-weight: 500;
 }
 
-.post-form input[type="submit"] {
+.post-form input[type="submit"],
+.comment-link,
+.btn-delete,
+.like-btn,
+.admin-actions button {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-weight: 500;
   background-color: plum;
   border: none;
+  text-decoration: none;
+  color: black;
+}
+
+.like-btn {
+  margin-right: 0.5rem;
+}
+
+.admin-actions button {
+  background-color: rgb(207, 101, 101);
+  color: white;
+}
+
+.comment-link {
+  font-size: 0.8rem;
+}
+
+.actions a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: black;
+}
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin: 0.5rem 0;
+}
+
+.admin-actions form {
+  margin: 0;
+  max-width: none;
 }
 
 .alert {
