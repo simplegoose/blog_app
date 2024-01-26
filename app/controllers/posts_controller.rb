@@ -52,6 +52,12 @@ class PostsController < ApplicationController
     redirect_to "/users/#{params[:user_id]}"
   end
 
+  def update_post_destroy_first
+    post_counter = author.posts_counter
+    post_counter -= 1
+    User.find(author_id).update(posts_counter: post_counter)
+  end
+
   private
 
   def post_params
