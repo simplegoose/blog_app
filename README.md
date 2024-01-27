@@ -130,10 +130,23 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
+👤 **Macherki Nessrine**
+
+- GitHub: [@githubhandle](https://github.com/Nessrine88)
+- Twitter: [@twitterhandle](https://twitter.com/Nessour88)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/nessrine-macherki-86959196/)
+  
+👤 **Franck Sefu**
+
+- GitHub: [francksefu](https://github.com/francksefu)
+- Twitter: [francksefu](https://twitter.com/franck_sefu)
+- LinkedIn: [francksefu](https://www.linkedin.com/in/franck-sefu/)
+
 👤 **Timothy Njoroge**
 
 - GitHub: [@simplegoose](https://github.com/simplegoose)
 - LinkedIn: [Timothy Njoroge](https://linkedin.com/in/timothy-njoroge-mwangi)
+  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
