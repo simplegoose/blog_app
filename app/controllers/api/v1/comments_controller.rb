@@ -15,7 +15,7 @@ module Api
 
         render json: comments, status: :ok
       end
-      
+
       # Post api/v1/users/:user_id/posts/:post_id/comments
       def create
         user_id = params[:user_id]
@@ -25,25 +25,25 @@ module Api
         comment = Comment.new(comment_params)
         comment.user = user
         comment.post = post
-    
+
         if comment.save
-          render json: { :message => 'Comment has been successfully saved.' }, status: :created
+          render json: { message: 'Comment has been successfully saved.' }, status: :created
         else
-          render json: { :message => 'Comment has been has not been saved due to some errors.', :errors => comment.errors }, status: :bad_request
+          render json: { message: 'Comment has been has not been saved due to some errors.', errors: comment.errors },
+                 status: :bad_request
         end
       end
-    
+
       private
-    
+
       def comment_params
         puts params
         params.permit(:text)
       end
 
       def not_found
-        render json: { :err => 'Error: Record not found '} , status: :not_found
+        render json: { err: 'Error: Record not found ' }, status: :not_found
       end
     end
   end
 end
-
