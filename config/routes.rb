@@ -12,4 +12,14 @@ Rails.application.routes.draw do
     end
   end
   resources :posts, only: [:create, :new]
+
+  namespace :api do
+    namespace :v1 do
+      resources :users do
+        resources :posts, only: [:index, :create] do
+          resources :comments, only: [:index, :create]
+        end
+      end
+    end
+  end
 end
