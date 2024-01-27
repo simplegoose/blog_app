@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     comment.user = user
     comment.post = post
 
-    if user == nil
+    if user.nil?
       flash[:error] = 'Error: Please log in to create a post'
       return redirect_to users_path
     end

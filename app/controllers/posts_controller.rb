@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
     post.author = user
 
-    if user == nil
+    if user.nil?
       flash[:error] = 'Error: Please log in to create a post'
       return redirect_to users_path
     end
