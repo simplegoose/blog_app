@@ -26,6 +26,12 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
 
     post.author = user
+
+    if user == nil
+      flash[:error] = 'Error: Please log in to create a post'
+      return redirect_to users_path
+    end
+
     if post.save
       flash[:success] = 'Success: Your post has been saved'
       redirect_to root_path
