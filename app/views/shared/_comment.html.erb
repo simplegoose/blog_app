@@ -1,3 +1,8 @@
 <div class="comment">
   <span><%= comment.user.name %></span> : <span><%= comment.text %></span>
+  <div class='admin-actions'>
+    <% if can? :destroy , comment %>
+      <%= button_to 'Delete', user_post_comment_path(comment.user, comment.post, comment), method: :delete %>
+    <% end %>
+  </div>
 </div>

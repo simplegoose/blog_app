@@ -26,6 +26,12 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
 
     post.author = user
+
+    if user.nil?
+      flash[:error] = 'Error: Please log in to create a post'
+      return redirect_to users_path
+    end
+
     if post.save
       flash[:success] = 'Success: Your post has been saved'
       redirect_to root_path
@@ -34,6 +40,28 @@ class PostsController < ApplicationController
       flash[:error] = 'Error: Post could not be saved'
       render :new, locals: { post: }
     end
+  end
+
+  def update_post_destroy_first
+    post_counter = author.posts_counter
+    post_counter -= 1
+    User.find(author_id).update(posts_counter: post_counter)
+  end
+
+  # Get users/:user_id/posts/:id
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = Post.find(params[:id])
+
+    @post.comments.destroy_all
+    @post.likes.destroy_all
+
+    @post.destroy
+
+    @user.post_counter -= 1
+    @user.save
+
+    redirect_to "/users/#{params[:user_id]}"
   end
 
   private
